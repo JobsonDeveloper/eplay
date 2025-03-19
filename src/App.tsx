@@ -3,19 +3,26 @@ import Header from './components/Header/Header'
 import { GlobalCss } from './Styles'
 import Rotas from './Routes'
 import Footer from './components/Footer/Footer'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
+import Cart from './components/Cart/Cart'
 
 function App() {
   return (
-    <BrowserRouter>
-      <GlobalCss />
-      <article className="container">
-        <Header />
-      </article>
+    <Provider store={store}>
+      <BrowserRouter>
+        <GlobalCss />
+        <article className="container">
+          <Header />
+        </article>
 
-      <Rotas />
+        <Rotas />
 
-      <Footer />
-    </BrowserRouter>
+        <Footer />
+
+        <Cart />
+      </BrowserRouter>
+    </Provider>
   )
 }
 

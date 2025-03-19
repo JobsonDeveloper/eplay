@@ -2,22 +2,36 @@ import { Imagem, Precos, Titulo } from './Styles'
 import bannerImg from '../../assets/images/banner-homem-aranha.png'
 import Tag from '../Tag/Tag'
 import Button from '../Button/Button'
+import { useEffect, useState } from 'react'
+import { Game } from '../../pages/Home/Home'
+import { formataPreco } from '../ProductsList/ProductsList'
+import { useGetFeaturedGameQuery } from '../../services/api'
 
 const Banner = () => {
+  const { data: game } = useGetFeaturedGameQuery()
+
+  if (!game) {
+    return <p>Carregando...</p>
+  }
+
   return (
-    <Imagem style={{ backgroundImage: `url(${bannerImg})` }}>
+    <Imagem style={{ backgroundImage: `url(${game.media.cover})` }}>
       <article className="container">
         <Tag size="big">Destaque do dia</Tag>
 
         <div>
-          <Titulo>Marvel&apos;s Spider-Man: Miles Morales PS4 & PS5</Titulo>
+          <Titulo>{game.name}</Titulo>
           <Precos>
-            De <span>R$ 250,00</span> <br />
-            por apenas R$ 99,90
+            De <span>{formataPreco(game.prices.old)}</span> <br />
+            por apenas {formataPreco(game.prices.current)}
           </Precos>
         </div>
 
-        <Button type="link" to="/produtos" title="Clique e aproveite a oferta">
+        <Button
+          type="link"
+          to={`/product/${game.id}`}
+          title="Clique e aproveite a oferta"
+        >
           Aproveitar
         </Button>
       </article>

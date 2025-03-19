@@ -3,6 +3,8 @@ import { cores } from '../../Styles'
 
 export const Items = styled.ul`
   display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 `
 
 export const Action = styled.div`
@@ -21,7 +23,6 @@ export const Action = styled.div`
 `
 
 export const Item = styled.li`
-  margin-right: 16px;
   position: relative;
 
   & > img {
@@ -41,7 +42,7 @@ export const Item = styled.li`
 `
 
 export const Modal = styled.div`
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -51,6 +52,10 @@ export const Modal = styled.div`
   height: 100%;
   z-index: 1;
 
+  &.visivel {
+    display: flex;
+  }
+
   .overlay {
     position: absolute;
     top: 0;
@@ -58,7 +63,6 @@ export const Modal = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.73);
-    cursor: pointer;
   }
 `
 
@@ -78,8 +82,16 @@ export const ModalContent = styled.div`
     }
   }
 
-  img {
+  img,
+  iframe {
     display: block;
     max-width: 100%;
+    cursor: pointer;
+  }
+
+  iframe,
+  .imgGame {
+    width: 100%;
+    height: 480px;
   }
 `

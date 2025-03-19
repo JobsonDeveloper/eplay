@@ -8,6 +8,11 @@ export const cores = {
   verde: '#10AC84'
 }
 
+export const brackpoints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
+
 export const GlobalCss = createGlobalStyle`
   * {
     margin: 0;
@@ -27,5 +32,9 @@ export const GlobalCss = createGlobalStyle`
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
+
+    @media (max-width: ${brackpoints.desktop}) {
+      max-width: 80%;
+    }
   }
 `

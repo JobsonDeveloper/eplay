@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import { Container, Title } from './Styles'
 
 export type Props = {
+  id?: string
   title: string
   background: 'black' | 'grey'
   children: JSX.Element

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../Styles'
+import { brackpoints, cores } from '../../Styles'
 import { TagContainer } from '../Tag/Styles'
 
 export const Banner = styled.div`
@@ -34,6 +34,10 @@ export const Banner = styled.div`
 
   ${TagContainer} {
     margin-right: 8px;
+  }
+
+  @media (max-width: ${brackpoints.desktop}) {
+    background-size: cover;
   }
 `
 

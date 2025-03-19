@@ -8,6 +8,7 @@ export const Imagem = styled.section`
   background-repeat: no-repeat;
   font-weight: bold;
   background-size: cover;
+  position: relative;
 
   .container {
     display: flex;
@@ -15,11 +16,22 @@ export const Imagem = styled.section`
     padding-top: 340px;
     justify-content: space-between;
     align-items: flex-end;
+    z-index: 1;
   }
 
   ${TagContainer} {
     position: absolute;
     top: 32px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
   }
 `
 

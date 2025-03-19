@@ -1,62 +1,65 @@
+import { useEffect, useState } from 'react'
 import ProductsList from '../../components/ProductsList/ProductsList'
-import Game from '../../models/Game'
-
-const games: Game[] = [
-  {
-    id: 1,
-    title: 'Resident Evil',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0R6HOVAXXuCYYeKTd4pMfUnvWlxfvrIrs0w&s',
-    category: 'Ação',
-    infos: ['-10%', 'R$ 250,00'],
-    system: 'Windows',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, beatae quis! Ad facere ullam minus sunt quam illo quaerat fuga ducimus alias tempora magnam molestiae fugiat, debitis vel voluptates animi!'
-  },
-  {
-    id: 2,
-    title: 'Resident Evil',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0R6HOVAXXuCYYeKTd4pMfUnvWlxfvrIrs0w&s',
-    category: 'Ação',
-    infos: ['-10%', 'R$ 250,00'],
-    system: 'Windows',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, beatae quis! Ad facere ullam minus sunt quam illo quaerat fuga ducimus alias tempora magnam molestiae fugiat, debitis vel voluptates animi!'
-  },
-  {
-    id: 3,
-    title: 'Resident Evil',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0R6HOVAXXuCYYeKTd4pMfUnvWlxfvrIrs0w&s',
-    category: 'Ação',
-    infos: ['-10%', 'R$ 250,00'],
-    system: 'Windows',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, beatae quis! Ad facere ullam minus sunt quam illo quaerat fuga ducimus alias tempora magnam molestiae fugiat, debitis vel voluptates animi!'
-  },
-  {
-    id: 4,
-    title: 'Resident Evil',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0R6HOVAXXuCYYeKTd4pMfUnvWlxfvrIrs0w&s',
-    category: 'Ação',
-    infos: ['-10%', 'R$ 250,00'],
-    system: 'Windows',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, beatae quis! Ad facere ullam minus sunt quam illo quaerat fuga ducimus alias tempora magnam molestiae fugiat, debitis vel voluptates animi!'
-  }
-]
+import { Game } from '../Home/Home'
+import {
+  useGetActionGamesQuery,
+  useGetEsportsGamesQuery,
+  useGetFightGamesQuery,
+  useGetRpgGamesQuery,
+  useGetSimulationGamesQuery
+} from '../../services/api'
 
 const Categories = () => {
-  return (
-    <>
-      <ProductsList title="RPG" background="grey" games={games} />
-      <ProductsList title="Ação" background="black" games={games} />
-      <ProductsList title="Aventura" background="grey" games={games} />
-      <ProductsList title="FPS" background="black" games={games} />
-    </>
-  )
+  const { data: actionGames } = useGetActionGamesQuery()
+  const { data: esportsGames } = useGetEsportsGamesQuery()
+  const { data: fightGames } = useGetFightGamesQuery()
+  const { data: rpgnGames } = useGetRpgGamesQuery()
+  const { data: simulationGames } = useGetSimulationGamesQuery()
+
+  if (
+    actionGames &&
+    esportsGames &&
+    fightGames &&
+    rpgnGames &&
+    simulationGames
+  ) {
+    return (
+      <>
+        <ProductsList
+          title="Ação"
+          background="black"
+          games={actionGames}
+          id="action"
+        />
+        <ProductsList
+          title="Esportes"
+          background="grey"
+          games={esportsGames}
+          id="sports"
+        />
+        <ProductsList
+          title="Luta"
+          background="black"
+          games={fightGames}
+          id="fight"
+        />
+        <ProductsList
+          title="RPG"
+          background="grey"
+          games={rpgnGames}
+          id="rpg"
+        />
+        <ProductsList
+          title="Simulação"
+          background="black"
+          games={simulationGames}
+          id="simulation"
+        />
+      </>
+    )
+  }
+
+  return <h4>Carregando...</h4>
 }
 
 export default Categories
