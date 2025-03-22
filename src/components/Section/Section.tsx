@@ -1,5 +1,4 @@
-import { ReactNode } from 'react'
-import { Container, Title } from './Styles'
+import * as S from './Styles'
 
 export type Props = {
   id?: string
@@ -10,12 +9,12 @@ export type Props = {
 
 const Section = ({ title, background, children }: Props) => {
   return (
-    <Container background={background}>
+    <S.Container background={background}>
       <div className="container">
-        <Title>{title}</Title>
+        <S.Title>{title}</S.Title>
         {children}
       </div>
-    </Container>
+    </S.Container>
   )
 }
 

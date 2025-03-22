@@ -1,23 +1,19 @@
-import { Game } from '../../pages/Home/Home'
+import { parseToBrl } from '../../utils/utils'
 import Product from '../Product/Product'
-import { Container, Title } from '../Section/Styles'
+
+import * as S from '../Section/Styles'
 import { List } from './Styles'
+import Loader from '../Loader/Loader'
 
 export type Props = {
   id: string
   title: string
   background: 'grey' | 'black'
-  games: Game[]
+  games?: Game[]
+  isLoading: boolean
 }
 
-export const formataPreco = (preco = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
-}
-
-const ProductsList = ({ id, title, background, games }: Props) => {
+const ProductsList = ({ id, title, background, games, isLoading }: Props) => {
   const getGameTags = (game: Game) => {
     const tags = []
 
@@ -30,19 +26,23 @@ const ProductsList = ({ id, title, background, games }: Props) => {
     }
 
     if (game.prices.current) {
-      tags.push(formataPreco(game.prices.current))
+      tags.push(parseToBrl(game.prices.current))
     }
 
     return tags
   }
 
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
-    <Container id={id} background={background}>
+    <S.Container id={id} background={background}>
       <div className="container">
-        <Title>{title}</Title>
+        <S.Title>{title}</S.Title>
 
         <List>
-          {games.map((game) => (
+          {games?.map((game) => (
             <li key={game.id}>
               <Product
                 id={game.id}
@@ -57,7 +57,7 @@ const ProductsList = ({ id, title, background, games }: Props) => {
           ))}
         </List>
       </div>
-    </Container>
+    </S.Container>
   )
 }
 

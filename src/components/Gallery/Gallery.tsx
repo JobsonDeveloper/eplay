@@ -1,27 +1,14 @@
-import { Action, Item, Items, Modal, ModalContent } from './Styles'
+import { useEffect, useState } from 'react'
+import AOS from 'aos'
+
 import Section from '../Section/Section'
+
 import play from '../../assets/images/botao-play.png'
 import zoom from '../../assets/images/mais-zoom.png'
-import spiderman from '../../assets/images/banner-homem-aranha.png'
-import hogearts from '../../assets/images/fundohogwarts.svg'
 import close from '../../assets/images/close.png'
-import { useState } from 'react'
-import { GalleryProps } from '../../pages/Home/Home'
 
-const mock: GalleryProps[] = [
-  {
-    type: 'image',
-    url: spiderman
-  },
-  {
-    type: 'image',
-    url: hogearts
-  },
-  {
-    type: 'video',
-    url: 'https://www.youtube.com/embed/uHGShqcAHlQ?si=Db26FlijNgv39TT9'
-  }
-]
+import 'aos/dist/aos.css'
+import * as S from './Styles'
 
 type PropsDefault = {
   defaultCover: string
@@ -58,13 +45,19 @@ const Gallery = ({ defaultCover, name, items }: PropsDefault) => {
     })
   }
 
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   return (
     <>
       <Section background="black" title="Galeria">
-        <Items>
+        <S.Items>
           {items.map((media, idx) => (
-            <Item
+            <S.Item
               key={idx}
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
               onClick={() => {
                 setModal({
                   url: media.url,
@@ -77,22 +70,22 @@ const Gallery = ({ defaultCover, name, items }: PropsDefault) => {
                 src={getMediaCover(media)}
                 alt={`Imagem ${idx} de ${name}`}
               />
-              <Action>
+              <S.Action>
                 <img
                   src={getMediaIcon(media)}
                   alt="Clique para maximizar a mídia"
                 />
-              </Action>
-            </Item>
+              </S.Action>
+            </S.Item>
           ))}
-        </Items>
+        </S.Items>
       </Section>
 
-      <Modal className={modal.visible ? 'visivel' : ''}>
-        <ModalContent className="container">
+      <S.Modal className={modal.visible ? 'is-visible' : ''}>
+        <S.ModalContent className="container">
           <header>
             <h4>{name}</h4>
-            <img src={close} alt="Close" onClick={() => closeModal()} />
+            <img src={close} alt="Close" onClick={closeModal} />
           </header>
 
           {modal.type === 'image' ? (
@@ -100,9 +93,9 @@ const Gallery = ({ defaultCover, name, items }: PropsDefault) => {
           ) : (
             <iframe frameBorder={0} src={modal.url} />
           )}
-        </ModalContent>
-        <div className="overlay" onClick={() => closeModal()}></div>
-      </Modal>
+        </S.ModalContent>
+        <div className="overlay" onClick={closeModal}></div>
+      </S.Modal>
     </>
   )
 }

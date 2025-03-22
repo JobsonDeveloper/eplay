@@ -1,7 +1,5 @@
 import styled from 'styled-components'
-import { Props } from './ProductsList'
-import { brackpoints, cores } from '../../Styles'
-import { Card } from '../Product/Styles'
+import { brackpoints } from '../../Styles'
 
 export const List = styled.div`
   display: grid;

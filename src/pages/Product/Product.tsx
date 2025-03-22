@@ -1,29 +1,39 @@
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import AOS from 'aos'
+
+import Loader from '../../components/Loader/Loader'
+import { useGetGameQuery } from '../../services/api'
 import Hero from '../../components/Hero/Hero'
 import Section from '../../components/Section/Section'
 import Gallery from '../../components/Gallery/Gallery'
 
-import residentEvil from '../../assets/images/resident.png'
-import { useEffect, useState } from 'react'
-import { Game } from '../Home/Home'
-import { useGetGameQuery } from '../../services/api'
+import 'aos/dist/aos.css'
+
+type GameParams = {
+  id: string
+}
 
 const Product = () => {
-  const { id } = useParams()
-  const { data: game } = useGetGameQuery(id!)
+  const { id } = useParams() as GameParams
+  const { data: game } = useGetGameQuery(id)
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
 
   if (!game) {
-    return <p>Carregando...</p>
+    return <Loader />
   }
 
   return (
     <>
       <Hero game={game} />
       <Section background="black" title="Bem vindo">
-        <p>{game.description}</p>
+        <p data-aos="fade-right">{game.description}</p>
       </Section>
       <Section background="grey" title="Mais detalhes">
-        <p>
+        <p data-aos="fade-right">
           <b>Plataforma:</b> {game.details.system} <br />
           <b>Desenvolvedor:</b> {game.details.developer} <br />
           <b>Editora:</b> {game.details.publisher}

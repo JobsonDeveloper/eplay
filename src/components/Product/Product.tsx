@@ -1,5 +1,9 @@
+import { useEffect } from 'react'
 import Tag from '../Tag/Tag'
-import { Card, Descricao, Infos, Titulo } from './Styles'
+import AOS from 'aos'
+
+import 'aos/dist/aos.css'
+import * as S from './Styles'
 
 type Props = {
   id: number
@@ -20,27 +24,35 @@ const Product = ({
   infos,
   image
 }: Props) => {
-  const getDescricao = (descricao: string) => {
-    if (descricao.length > 95) {
-      return descricao.slice(0, 92) + '...'
+  const getDescription = (text: string) => {
+    if (text.length > 95) {
+      return text.slice(0, 92) + '...'
     }
-    return descricao
+    return text
   }
 
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   return (
-    <Card to={`/product/${id}`}>
+    <S.Card
+      title={`Clique aqui para ver mais detalhes do jogo: ${title}`}
+      to={`/product/${id}`}
+      data-aos="flip-left"
+    >
       <img src={image} alt={title} />
-      <Infos>
+      <S.Infos>
         {infos.map((info) => (
           <Tag key={info}>{info}</Tag>
         ))}
-      </Infos>
-      <Titulo>{title}</Titulo>
+      </S.Infos>
+      <S.Title>{title}</S.Title>
       <Tag>{category}</Tag>
       <Tag>{system}</Tag>
 
-      <Descricao>{getDescricao(description)}</Descricao>
-    </Card>
+      <S.Description>{getDescription(description)}</S.Description>
+    </S.Card>
   )
 }
 
