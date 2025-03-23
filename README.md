@@ -19,7 +19,7 @@ Os dados são enviados para uma API fornecida pelo professor da EBAC, retornando
 <br />
 <br />
 <br />
-![image](https://github.com/user-attachments/assets/b5c4755c-2bb4-4e25-8710-8c3889222eac)
+![image](https://github.com/user-attachments/assets/b42eb229-879e-4c2e-98bb-d81e64bfa282)
 <br />
 <br />
 <br />
