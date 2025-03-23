@@ -16,20 +16,55 @@ Os dados são enviados para uma API fornecida pelo professor da EBAC, retornando
 ### Página principal
 ![image](https://github.com/user-attachments/assets/cfbeaf7f-7408-411c-a319-f1fe873caa1b)
 <br />
+<br />
+<br />
+<br />
 ![image](https://github.com/user-attachments/assets/b5c4755c-2bb4-4e25-8710-8c3889222eac)
+<br />
+<br />
+<br />
+<br />
 ![image](https://github.com/user-attachments/assets/1a50c73b-024c-4286-b49c-70635afd250c)
 
 ### Página de categorias
 ![image](https://github.com/user-attachments/assets/4b02ecae-06c2-43f5-a9d9-e3c0903c8ed4)
+<br />
+<br />
+<br />
+<br />
 ![image](https://github.com/user-attachments/assets/05d3bca8-d1ed-411b-b02b-fb3d07be2b16)
+<br />
+<br />
+<br />
+<br />
 ![image](https://github.com/user-attachments/assets/27616f6b-e931-4ef2-93e0-951569563092)
+<br />
+<br />
+<br />
+<br />
 ![image](https://github.com/user-attachments/assets/0ac6a4b5-a1eb-4b29-87cb-c9414f6b1e7d)
+<br />
+<br />
+<br />
+<br />
 ![image](https://github.com/user-attachments/assets/ab44702c-7f4a-4788-9cb1-f837b77c1737)
 
 ### Página do produto
 ![image](https://github.com/user-attachments/assets/166609b0-9dc2-4553-bf64-4c88cdfaa500)
+<br />
+<br />
+<br />
+<br />
 ![image](https://github.com/user-attachments/assets/4ba25b7c-70e0-4fd1-a610-085bf292253e)
+<br />
+<br />
+<br />
+<br />
 ![image](https://github.com/user-attachments/assets/17e803ca-5c6a-41ae-80aa-69ea3d20a0a9)
+<br />
+<br />
+<br />
+<br />
 ![image](https://github.com/user-attachments/assets/07410dfc-c786-44b6-adb6-fd66a53c7d8e)
 
 ### Carrinho
@@ -37,6 +72,10 @@ Os dados são enviados para uma API fornecida pelo professor da EBAC, retornando
 
 ### Págiina de compra do produto
 ![image](https://github.com/user-attachments/assets/1c1f42ab-ba2c-4f2f-91e5-dce36b978fdb)
+<br />
+<br />
+<br />
+<br />
 ![image](https://github.com/user-attachments/assets/f18787bf-851d-4fc3-bb57-ad487c58b432)
 
 ### Solicitação de compra realizada
