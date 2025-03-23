@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+[Veja o site](https://eplay-ochre.vercel.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Ferramentas utiliizadas:
+[![My Skills](https://skillicons.dev/icons?i=vite,redux,ts,styledcomponents,git,figma,vercel)](https://skillicons.dev)
 
-## Available Scripts
+### Lista completa:
+React | React Router | React Hooks | React Icons | React Spinners | React Input Mask | React Routet Hash Link | Redux | API | AOS - Animate On Scroll Library | Yup | Formik | TypeScript | Styled-Components | Prettier | ESLint | Git | GitHub | Figma | Vercel
 
-In the project directory, you can run:
+Este projeto foi criado para exercitar os últimos conhecimentos adquiridos durante o módulo de Front-End na EBAC.
+O eplay é um site com compra de jogos, nele você pode encontrar desde jogos mais casuais até jogos mais esportivos.
 
-### `npm start`
+A maior parte do o gerenciamento de estados é realizado é realizado através do Redux, inclusive a coleta dos dados da API com o Redux Toolkit Query.
+A verificação do formulário do usuário é realizada por meio do Formik juntamente com o Yup, e juntamente com o React Input Mask o site garante uma boa experiência para o usuário na hora de realizar uma compra.
+Os dados são enviados para uma API fornecida pelo professor da EBAC, retornando assim o ID do pedido realizado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Página principal
+![image](https://github.com/user-attachments/assets/cfbeaf7f-7408-411c-a319-f1fe873caa1b)
+<br />
+<br />
+<br />
+<br />
+![image](https://github.com/user-attachments/assets/b42eb229-879e-4c2e-98bb-d81e64bfa282)
+<br />
+<br />
+<br />
+<br />
+![image](https://github.com/user-attachments/assets/1a50c73b-024c-4286-b49c-70635afd250c)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Página de categorias
+![image](https://github.com/user-attachments/assets/4b02ecae-06c2-43f5-a9d9-e3c0903c8ed4)
+<br />
+<br />
+<br />
+<br />
+![image](https://github.com/user-attachments/assets/05d3bca8-d1ed-411b-b02b-fb3d07be2b16)
+<br />
+<br />
+<br />
+<br />
+![image](https://github.com/user-attachments/assets/27616f6b-e931-4ef2-93e0-951569563092)
+<br />
+<br />
+<br />
+<br />
+![image](https://github.com/user-attachments/assets/0ac6a4b5-a1eb-4b29-87cb-c9414f6b1e7d)
+<br />
+<br />
+<br />
+<br />
+![image](https://github.com/user-attachments/assets/ab44702c-7f4a-4788-9cb1-f837b77c1737)
 
-### `npm test`
+### Página do produto
+![image](https://github.com/user-attachments/assets/166609b0-9dc2-4553-bf64-4c88cdfaa500)
+<br />
+<br />
+<br />
+<br />
+![image](https://github.com/user-attachments/assets/4ba25b7c-70e0-4fd1-a610-085bf292253e)
+<br />
+<br />
+<br />
+<br />
+![image](https://github.com/user-attachments/assets/17e803ca-5c6a-41ae-80aa-69ea3d20a0a9)
+<br />
+<br />
+<br />
+<br />
+![image](https://github.com/user-attachments/assets/07410dfc-c786-44b6-adb6-fd66a53c7d8e)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Carrinho
+![image](https://github.com/user-attachments/assets/f71397c5-7a05-49dd-a2ca-719ef852b7e5)
 
-### `npm run build`
+### Págiina de compra do produto
+![image](https://github.com/user-attachments/assets/1c1f42ab-ba2c-4f2f-91e5-dce36b978fdb)
+<br />
+<br />
+<br />
+<br />
+![image](https://github.com/user-attachments/assets/f18787bf-851d-4fc3-bb57-ad487c58b432)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Solicitação de compra realizada
+![image](https://github.com/user-attachments/assets/25574a66-d725-4a08-a274-a76664732a0a)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
